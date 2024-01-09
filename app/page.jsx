@@ -8,8 +8,6 @@ export default function Home() {
           <div className="col">
             <div className="topic-list">
               <TopicList />
-              <TopicList />
-              <TopicList />              <TopicList />  <TopicList />  <TopicList />  <TopicList />
             </div>
           </div>
         </div>
