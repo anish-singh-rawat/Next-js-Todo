@@ -15,7 +15,9 @@ const Navbar = () => {
                             </div>
                             <div className="add-topic">
                             <Link className="Link link2" href={'/addTopic'}>Add Topic</Link>
+                            <Link className='Link' href={'/addTopic'}>
                             <IoMdAddCircle className='add-icon'/>
+                            </Link>
                             </div>
                         </div>
                     </div>

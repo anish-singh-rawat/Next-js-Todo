@@ -47,6 +47,31 @@
     overflow-y: scroll;
     margin-top: 20px;
 }
+.input-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.title-input, .description-input{
+    width: 45%;
+}
+input{
+    height: 50px;
+}
+.btn-div{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 544px) {
+    .btn-div{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}
 @media (max-width: 486px) {
     .top-header{
     display: flex;
@@ -60,5 +85,17 @@
     }
     .add-icon{
         margin-bottom: 0px;
+    }
+
+    .input-header{
+        width: 100%;
+        display: block;
+        align-items: center;
+    }
+    .title-input, .description-input{
+        width: 100%;
+    }
+    .description-input{
+        margin-top: 20px;
     }
 }
