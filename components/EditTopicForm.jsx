@@ -1,29 +1,34 @@
 "use client"
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 const EditTopicForm = ({ id, title, description }) => {
-    // const router = useRouter()
-    const [newtitle, setNewTitle] = useState(title);
-    const [newdescription, setnewDescription] = useState(description);
+    const router = useRouter();
+    const [newTitle, setNewTitle] = useState(title);
+    const [newDescription, setNewDescription] = useState(description);
+
     const handleEdit = async () => {
         try {
             const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
                 method: 'PUT',
                 headers: {
-                    "content-type": "application/json",
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ newtitle, newdescription })
-            })
+                body: JSON.stringify({ title: newTitle, description: newDescription }),
+            });
+
             if (!res.ok) {
-                throw new Error('faild to update topics')
+                throw new Error('Failed to update topics');
             }
-            // router.push('/')
+
+            router.push('/');
+            router.refresh();
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
-    }
+    };
+
     return (
         <>
             <div className="container mt-5">
@@ -32,12 +37,12 @@ const EditTopicForm = ({ id, title, description }) => {
                         <div className="input-header">
                             <input type="text" placeholder='Enter Title...'
                                 onChange={(e) => setNewTitle(e.target.value)}
-                                value={newtitle}
+                                value={newTitle}
                                 className='title-input' />
 
                             <input type="text" placeholder='Enter description....'
-                                onChange={(e) => setnewDescription(e.target.value)}
-                                value={newdescription}
+                                onChange={(e) => setNewDescription(e.target.value)}
+                                value={newDescription}
                                 className='description-input' />
                         </div>
                         <div className="btn-div mt-4">

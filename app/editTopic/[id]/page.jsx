@@ -1,5 +1,4 @@
 import EditTopicForm from '@/components/EditTopicForm'
-import React from 'react'
 
 const getTopicById = async (id) => {
   try {
