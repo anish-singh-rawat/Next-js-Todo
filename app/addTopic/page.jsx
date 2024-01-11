@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
-const addTopic = () => {
+const AddTopic = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const router = useRouter()
@@ -57,4 +57,4 @@ const addTopic = () => {
   )
 }
 
-export default addTopic
+export default AddTopic
